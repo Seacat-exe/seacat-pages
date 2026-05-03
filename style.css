@@ -695,7 +695,7 @@ footer:hover {
     transform: translateY(-50%);
     width: 40px;                          /* размер блока иконки */
     height: 40px;
-    background: url('_logoMini.png') no-repeat center;
+    background: url('logoMini.png') no-repeat center;
     background-size: 40px auto;   /* ширина 44px, высота подстроится */
     filter: drop-shadow(0 0 6px #00ffd1);
     transition: all 0.2s ease;
@@ -732,4 +732,5 @@ body::after {
 @keyframes starsDrift {
   0%   { opacity: 0.5; transform: scale(1) translate(0, 0); }
   100% { opacity: 0.9; transform: scale(1.05) translate(-10px, -5px); }
+>>>>>>> master
 }
