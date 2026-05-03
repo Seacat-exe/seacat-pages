@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeaCat.exe — хакерский песочница</title>
+    <!-- Фавикон (один раз) -->
+    <link rel="icon" type="image/png" href="_logoMini.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo-small">
+            <img src="_logoBig.jpg" alt="SeaCat logo">
+        </div>
+        <div class="brand">SeaCat.exe</div>
+    </header>
+
+    <section class="hero">
+        <h1>Where C++ meets the ocean</h1>
+        <div class="buttons">
+            <a href="https://github.com/Seacat-exe?tab=repositories" target="_blank" class="btn-link">Projects</a>
+            <a href="https://github.com/Seacat-exe" target="_blank" class="btn-link">GitHub</a>
+        </div>
+    </section>
+
+    <section class="projects">
+        <!-- Все карточки проектов: заменил "ваш_аккаунт" на "Seacat-exe" -->
+        <div class="card">
+            <h2>seacat-netcore</h2>
+            <p>Своя сетевая библиотека (аналог упрощённого Boost.Asio)</p>
+            <ul>
+                <li>epoll / select</li>
+                <li>async I/O</li>
+                <li>thread pool</li>
+                <li>event loop</li>
+            </ul>
+            <div class="platforms">
+                <i class="fab fa-linux" title="Linux"></i>
+                <i class="fab fa-apple" title="macOS"></i>
+                <i class="fab fa-windows" title="Windows"></i>
+                <i class="fab fa-android" title="Android"></i>
+            </div>
+            <div class="card-footer">
+                <a href="https://github.com/Seacat-exe/seacat-netcore/releases" target="_blank" class="download-btn">
+                    <i class="fas fa-download"></i> Скачать
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>seacat-http</h2>
+            <p>HTTP/1.1 сервер — мини-аналог nginx</p>
+            <ul>
+                <li>многопоточка</li>
+                <li>middleware</li>
+                <li>роутинг</li>
+                <li>статические файлы</li>
+            </ul>
+            <div class="platforms">
+                <i class="fab fa-linux"></i><i class="fab fa-apple"></i><i class="fab fa-windows"></i><i class="fab fa-android"></i>
+            </div>
+            <div class="card-footer">
+                <a href="https://github.com/Seacat-exe/seacat-http/releases" target="_blank" class="download-btn">
+                    <i class="fas fa-download"></i> Скачать
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>seacat-chat</h2>
+            <p>TCP/WebSocket чат</p>
+            <ul>
+                <li>комнаты</li>
+                <li>reconnect</li>
+                <li>async messaging</li>
+                <li>CLI + Qt GUI</li>
+            </ul>
+            <div class="platforms">
+                <i class="fab fa-linux"></i><i class="fab fa-apple"></i><i class="fab fa-windows"></i><i class="fab fa-android"></i>
+            </div>
+            <div class="card-footer">
+                <a href="https://github.com/Seacat-exe/seacat-chat/releases" target="_blank" class="download-btn">
+                    <i class="fas fa-download"></i> Скачать
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>seacat-db</h2>
+            <p>Мини-база данных</p>
+            <ul>
+                <li>key-value storage</li>
+                <li>mmap / file storage</li>
+                <li>простой query язык</li>
+            </ul>
+            <div class="platforms">
+                <i class="fab fa-linux"></i><i class="fab fa-apple"></i><i class="fab fa-windows"></i><i class="fab fa-android"></i>
+            </div>
+            <div class="card-footer">
+                <a href="https://github.com/Seacat-exe/seacat-db/releases" target="_blank" class="download-btn">
+                    <i class="fas fa-download"></i> Скачать
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>seacat-monitor</h2>
+            <p>Мониторинг системы</p>
+            <ul>
+                <li>CPU / RAM / network usage</li>
+                <li>экспорт через HTTP</li>
+                <li>CLI dashboard</li>
+            </ul>
+            <div class="platforms">
+                <i class="fab fa-linux"></i><i class="fab fa-apple"></i><i class="fab fa-windows"></i><i class="fab fa-android"></i>
+            </div>
+            <div class="card-footer">
+                <a href="https://github.com/Seacat-exe/seacat-monitor/releases" target="_blank" class="download-btn">
+                    <i class="fas fa-download"></i> Скачать
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>seacat-threadpool</h2>
+            <p>Библиотека потоков</p>
+            <ul>
+                <li>task scheduling</li>
+                <li>futures / promises</li>
+                <li>lock-free очередь</li>
+            </ul>
+            <div class="platforms">
+                <i class="fab fa-linux"></i><i class="fab fa-apple"></i><i class="fab fa-windows"></i><i class="fab fa-android"></i>
+            </div>
+            <div class="card-footer">
+                <a href="https://github.com/Seacat-exe/seacat-threadpool/releases" target="_blank" class="download-btn">
+                    <i class="fas fa-download"></i> Скачать
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>seacat-studio (Qt)</h2>
+            <p>GUI-оболочка для управления сервисами</p>
+            <ul>
+                <li>управление сервисами</li>
+                <li>визуализация сети</li>
+                <li>мониторинг в реальном времени</li>
+            </ul>
+            <div class="platforms">
+                <i class="fab fa-linux"></i><i class="fab fa-apple"></i><i class="fab fa-windows"></i><i class="fab fa-android"></i>
+            </div>
+            <div class="card-footer">
+                <a href="https://github.com/Seacat-exe/seacat-studio/releases" target="_blank" class="download-btn">
+                    <i class="fas fa-download"></i> Скачать
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Объединённая статистика -->
+    <section class="stats-full">
+        <h3>статистика SeaCat</h3>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">скачиваний / месяц</div>
+                <div class="stat-trend">↑ +12%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">форков</div>
+                <div class="stat-trend">↑ +8%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">contributors</div>
+                <div class="stat-trend">↑ +5%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">GitHub stars</div>
+                <div class="stat-trend">↗ +23%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">релизов</div>
+                <div class="stat-trend"></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">активных проектов</div>
+                <div class="stat-trend"></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">~1.0k</div>
+                <div class="stat-label">строк C++</div>
+                <div class="stat-trend"></div>
+            </div>
+        </div>
+        <div class="stats-footer">
+            <span class="live-badge">█ live data</span> обновляется каждые 24 часа
+        </div>
+    </section>
+
+    <!-- Changelog -->
+    <section class="changelog">
+        <h3>🐚 последние события / changelog</h3>
+        <div class="changelog-list">
+            <div class="changelog-item critical">
+                <span class="changelog-date">2025-04-28</span>
+                <span class="changelog-tag">⚡ core</span>
+                <span class="changelog-text">[seacat-netcore] epoll event loop optimised — прирост производительности +15%</span>
+            </div>
+            <div class="changelog-item major">
+                <span class="changelog-date">2025-04-25</span>
+                <span class="changelog-tag">🚀 feature</span>
+                <span class="changelog-text">[seacat-http] добавлен middleware для CORS</span>
+            </div>
+            <div class="changelog-item major">
+                <span class="changelog-date">2025-04-22</span>
+                <span class="changelog-tag">🔌 network</span>
+                <span class="changelog-text">[seacat-chat] WebSocket reconnect v2 с экспоненциальной задержкой</span>
+            </div>
+            <div class="changelog-item minor">
+                <span class="changelog-date">2025-04-20</span>
+                <span class="changelog-tag">🗄️ storage</span>
+                <span class="changelog-text">[seacat-db] mmap storage benchmark: +34% при seq-чтении</span>
+            </div>
+            <div class="changelog-item funny">
+                <span class="changelog-date">2025-04-18</span>
+                <span class="changelog-tag">🐟 fun</span>
+                <span class="changelog-text">[морж] *шлёп ластами* всё работает</span>
+            </div>
+        </div>
+        <div class="changelog-footer">
+            <a href="#" class="changelog-link">Полный журнал изменений →</a>
+        </div>
+    </section>
+
+    <!-- Донаты: добавлены реальные адреса и ссылка на Boosty -->
+    <section class="donate">
+        <h3>🐟 поддержать проект пожертвованием</h3>
+        <p class="donate-desc">Любая сумма помогает развитию SeaCat.exe. Спасибо, что вы с нами!</p>
+        <div class="one-time-buttons">
+            <a href="https://boosty.to/seacat_exe/donate" target="_blank" class="donate-one">100 ₽</a>
+            <a href="https://boosty.to/seacat_exe/donate" target="_blank" class="donate-one">250 ₽</a>
+            <a href="https://boosty.to/seacat_exe/donate" target="_blank" class="donate-one">500 ₽</a>
+            <a href="https://boosty.to/seacat_exe/donate" target="_blank" class="donate-one">1000 ₽</a>
+            <a href="https://boosty.to/seacat_exe/donate" target="_blank" class="donate-one">Своя сумма</a>
+        </div>
+        <div class="donate-services">
+            <p>Способы перевода:</p>
+            <div class="service-icons">
+                <a href="https://boosty.to/seacat_exe/donate" target="_blank" class="service-link"><i class="fas fa-gift"></i> Boosty</a>
+                <a href="#crypto" class="service-link"><i class="fas fa-coins"></i> Крипта</a>
+            </div>
+        </div>
+        <div class="crypto-donate" id="crypto">
+            <p>🔗 Криптовалюта (Ethereum / USDT ERC-20):</p>
+            <div class="crypto-address">
+                <code>0x1A2090A6d99c723f9A8f0BE6FD6bf5181049ff6D</code>
+                <button class="copy-btn" data-copy="0x1A2090A6d99c723f9A8f0BE6FD6bf5181049ff6D">копировать</button>
+            </div>
+            <p style="margin-top:15px;">🔗 Bitcoin:</p>
+            <div class="crypto-address">
+                <code>bc1qkut9hu9pn5ekag3e087pl0yygqw7un7efa2m0f</code>
+                <button class="copy-btn" data-copy="bc1qkut9hu9pn5ekag3e087pl0yygqw7un7efa2m0f">копировать</button>
+            </div>
+        </div>
+        <div class="sponsors">
+            <p>🐚 Благодарность тем, кто нас поддерживает:</p>
+            <div class="sponsor-list">
+                <span>🐡 @seahorse_dev</span>
+                <span>🦑 @octohacker</span>
+                <span>🐠 @goldfish_guru</span>
+                <span>🐟 и вы можете быть следующим → <a href="https://boosty.to/seacat_exe/donate" target="_blank">поддержать</a></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Социальные сети: реальный GitHub, email и Telegram пока заменены на заглушки (раскомментируй, если нужно) -->
+    <section class="social">
+        <h3>🌊 connect with SeaCat</h3>
+        <div class="social-icons">
+            <a href="https://github.com/Seacat-exe" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+            <!-- Если есть Telegram, замени # на ссылку, иначе удали или оставь заглушку -->
+            <a href="#" class="social-link"><i class="fab fa-telegram"></i> Telegram</a>
+            <!-- Email при желании можно указать: mailto:your@email.com -->
+            <a href="mailto:your@email.com" class="social-link"><i class="fas fa-envelope"></i> Email</a>
+            <!-- Остальные соцсети раскомментируй и вставь свои ссылки -->
+            <!-- <a href="https://discord.gg/ваш_сервер" target="_blank" class="social-link"><i class="fab fa-discord"></i> Discord</a> -->
+            <!-- <a href="https://twitter.com/ваш_ник" target="_blank" class="social-link"><i class="fab fa-twitter"></i> X</a> -->
+        </div>
+        <div class="ascii-email">
+            <pre>
+  _.--.
+.'_    \
+' \ '--'
+   '--'
+            </pre>
+            <span class="email-hint">>_ seacat@ocean.cpp</span>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wave-divider"></div>
+        <p>🐚 SeaCat.exe — где C++ встречает океан</p>
+        <p>GNU GPLv3 · 2025 · весь код — на волне</p>
+    </footer>
+
+</div> <!-- container -->
+
+<script>
+    // Копирование крипто-адресов
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const text = btn.getAttribute('data-copy');
+            navigator.clipboard.writeText(text).then(() => {
+                const original = btn.innerText;
+                btn.innerText = 'скопировано!';
+                setTimeout(() => btn.innerText = original, 1500);
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
