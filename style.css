@@ -695,7 +695,7 @@ footer:hover {
     transform: translateY(-50%);
     width: 40px;                          /* размер блока иконки */
     height: 40px;
-    background: url('_logoMini.png') no-repeat center;
+    background: url('logoMini.png') no-repeat center;
     background-size: 40px auto;   /* ширина 44px, высота подстроится */
     filter: drop-shadow(0 0 6px #00ffd1);
     transition: all 0.2s ease;
