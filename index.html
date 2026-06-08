@@ -13,12 +13,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="boot-overlay" id="bootOverlay" aria-hidden="true">
+        <div class="boot-box">
+            <p>&gt; initializing SeaCat.exe</p>
+            <p>&gt; loading netcore modules</p>
+            <p>&gt; checking network routes</p>
+            <p>&gt; access granted</p>
+        </div>
+    </div>
     <canvas id="particles" aria-hidden="true"></canvas>
 
     <div class="ambient ambient-one" aria-hidden="true"></div>
     <div class="ambient ambient-two" aria-hidden="true"></div>
 
     <div class="container">
+        <nav class="top-nav" aria-label="Основная навигация">
+            <a href="#projects">Проекты</a>
+            <a href="#status">Статус</a>
+            <a href="#architecture">Архитектура</a>
+            <a href="#benchmarks">Benchmarks</a>
+            <a href="#code">Код</a>
+        </nav>
+
         <header class="site-header">
             <a class="logo-panel" href="https://github.com/Seacat-exe" target="_blank" rel="noopener noreferrer" aria-label="SeaCat GitHub">
                 <img src="logoBig.jpg" alt="SeaCat logo">
@@ -70,12 +86,18 @@
                 </div>
             </section>
 
-            <section class="projects" id="projects" aria-label="Проекты">
+            <section class="projects-wrap" id="projects" aria-label="Проекты">
+                <div class="section-head centered">
+                    <p>project arsenal</p>
+                    <h2>Плитки проектов</h2>
+                </div>
+                <div class="projects">
                 <article class="card featured-card">
                     <span class="lang-badge">C++</span>
                     <div class="card-visual"><span>NET</span></div>
                     <h2>seacat-netcore</h2>
                     <p>Высокопроизводительная сетевая библиотека для event-driven архитектур.</p>
+                    <div class="card-meta"><span>core</span><span>async</span><span>multi-os</span></div>
                     <ul>
                         <li>epoll / select</li>
                         <li>async I/O</li>
@@ -99,6 +121,7 @@
                     <div class="card-visual"><span>HTTP</span></div>
                     <h2>seacat-http</h2>
                     <p>HTTP/1.1 сервер с многопоточной обработкой и middleware.</p>
+                    <div class="card-meta"><span>server</span><span>routing</span><span>static</span></div>
                     <ul>
                         <li>многопоточка</li>
                         <li>middleware</li>
@@ -117,6 +140,7 @@
                     <div class="card-visual"><span>CHAT</span></div>
                     <h2>seacat-chat</h2>
                     <p>TCP/WebSocket чат с CLI и Qt GUI.</p>
+                    <div class="card-meta"><span>websocket</span><span>cli</span><span>qt</span></div>
                     <ul>
                         <li>комнаты</li>
                         <li>reconnect</li>
@@ -135,6 +159,7 @@
                     <div class="card-visual"><span>IPC</span></div>
                     <h2>seacat-sharp</h2>
                     <p>Кроссплатформенная библиотека IPC и сериализации.</p>
+                    <div class="card-meta"><span>ipc</span><span>msgpack</span><span>.net</span></div>
                     <ul>
                         <li>named pipes / unix sockets</li>
                         <li>MessagePack</li>
@@ -153,6 +178,7 @@
                     <div class="card-visual"><span>WIN</span></div>
                     <h2>seacat-winagent</h2>
                     <p>Системный агент для Windows в формате службы.</p>
+                    <div class="card-meta"><span>service</span><span>wmi</span><span>rest</span></div>
                     <ul>
                         <li>WMI / counters</li>
                         <li>управление службами</li>
@@ -171,6 +197,7 @@
                     <div class="card-visual"><span>LIN</span></div>
                     <h2>seacat-lindaemon</h2>
                     <p>Демон для Linux на .NET с systemd-интеграцией.</p>
+                    <div class="card-meta"><span>systemd</span><span>logs</span><span>json</span></div>
                     <ul>
                         <li>systemd интеграция</li>
                         <li>сетевые уведомления</li>
@@ -183,6 +210,7 @@
                         <a href="https://github.com/Seacat-exe/seacat-lindaemon/releases" target="_blank" rel="noopener noreferrer" class="download-btn secondary">Релизы</a>
                     </div>
                 </article>
+                </div>
             </section>
 
             <section class="dashboard" id="status">
@@ -203,6 +231,76 @@
                     <div class="system-row"><span>Threat Level</span><strong>red calm</strong></div>
                 </div>
                 <p class="stats-footer">Если GitHub API недоступен, сайт покажет резервные значения.</p>
+            </section>
+
+
+            <section class="deep-dive" id="architecture">
+                <div class="section-head centered">
+                    <p>engineering map</p>
+                    <h2>Архитектура</h2>
+                </div>
+                <div class="architecture-panel">
+                    <div class="node root">Client / Agent</div>
+                    <div class="flow-line"></div>
+                    <div class="node">Protocol Layer</div>
+                    <div class="flow-line"></div>
+                    <div class="node hot">Event Loop</div>
+                    <div class="flow-line"></div>
+                    <div class="arch-grid">
+                        <div class="node">epoll / select</div>
+                        <div class="node">Thread Pool</div>
+                        <div class="node">Handlers</div>
+                    </div>
+                    <p class="arch-caption">Сайт теперь показывает не только список репозиториев, но и инженерную логику: как проекты связаны между собой.</p>
+                </div>
+            </section>
+
+            <section class="benchmarks" id="benchmarks">
+                <div class="section-head">
+                    <p>performance trace</p>
+                    <h2>Benchmarks</h2>
+                </div>
+                <div class="benchmark-grid">
+                    <div class="benchmark-card">
+                        <div class="benchmark-title">seacat-http</div>
+                        <div class="bar-row"><span>requests/sec</span><i style="--w:82%"></i><b>79k</b></div>
+                        <div class="bar-row"><span>latency p95</span><i style="--w:58%"></i><b>3.8ms</b></div>
+                        <div class="bar-row"><span>memory</span><i style="--w:44%"></i><b>31mb</b></div>
+                    </div>
+                    <div class="benchmark-card">
+                        <div class="benchmark-title">seacat-netcore</div>
+                        <div class="bar-row"><span>connections</span><i style="--w:76%"></i><b>12k</b></div>
+                        <div class="bar-row"><span>event loop</span><i style="--w:88%"></i><b>stable</b></div>
+                        <div class="bar-row"><span>cpu load</span><i style="--w:39%"></i><b>low</b></div>
+                    </div>
+                </div>
+                <p class="note">Значения можно заменить на реальные после тестов wrk/ab/hey. Блок уже готов под настоящие цифры.</p>
+            </section>
+
+            <section class="selected-code" id="code">
+                <div class="section-head">
+                    <p>selected code</p>
+                    <h2>Фрагмент ядра</h2>
+                </div>
+                <pre><code>class EventLoop {
+public:
+    void run();
+    void stop();
+    void post(Task task);
+
+private:
+    Poller poller_;
+    ThreadPool workers_;
+    std::atomic_bool active_ { true };
+};</code></pre>
+            </section>
+
+            <section class="philosophy">
+                <div class="section-head centered">
+                    <p>engineering philosophy</p>
+                    <h2>Код, который держит удар</h2>
+                </div>
+                <p class="manifesto">Я не пишу софт ради фреймворков. Я строю системы, которые продолжают работать, когда сеть шумит, процессы падают, а хаос пытается стать нормой.</p>
             </section>
 
             <section class="changelog">
@@ -298,11 +396,15 @@
             const terminalInput = document.getElementById('terminalCommand');
             const terminalOutput = document.getElementById('terminalOutput');
             const commands = {
-                help: ['Доступные команды:', 'projects — показать модули', 'status — состояние системы', 'github — открыть GitHub', 'contact — контакт', 'clear — очистить терминал'],
+                help: ['Доступные команды:', 'projects — показать модули', 'status — состояние системы', 'arch — архитектура', 'bench — benchmarks', 'code — selected code', 'sudo cat seacat.conf — секрет', 'github — открыть GitHub', 'contact — контакт', 'clear — очистить терминал'],
                 projects: ['seacat-netcore :: async network core', 'seacat-http :: HTTP/1.1 server', 'seacat-chat :: TCP/WebSocket chat', 'seacat-sharp :: IPC + serialization', 'seacat-winagent :: Windows service', 'seacat-lindaemon :: Linux daemon'],
                 status: ['[OK] core online', '[OK] network armed', '[OK] dashboard stable', '[WARN] caffeine level unknown'],
                 contact: ['contact@seacat.dev'],
-                github: ['Открываю GitHub...']
+                github: ['Открываю GitHub...'],
+                arch: ['Client → Protocol Layer → Event Loop → Poller / Thread Pool / Handlers'],
+                bench: ['seacat-http :: 79k req/sec placeholder', 'seacat-netcore :: 12k connections placeholder'],
+                code: ['EventLoop::run() // poll, dispatch, survive'],
+                'sudo cat seacat.conf': ['ACCESS GRANTED', 'mode = chaos_control', 'coffee = required', 'owner = SeaCat.exe']
             };
             function printLine(text, cls = '') {
                 const p = document.createElement('p');
@@ -349,6 +451,46 @@
                 }
             }
             loadGitHubStats();
+
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('pointermove', event => {
+                    if (reduceMotion) return;
+                    const rect = card.getBoundingClientRect();
+                    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 10;
+                    const y = ((event.clientY - rect.top) / rect.height - 0.5) * -10;
+                    card.style.setProperty('--rx', `${y}deg`);
+                    card.style.setProperty('--ry', `${x}deg`);
+                    card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+                    card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+                });
+                card.addEventListener('pointerleave', () => {
+                    card.style.setProperty('--rx', '0deg');
+                    card.style.setProperty('--ry', '0deg');
+                });
+            });
+
+            const bootOverlay = document.getElementById('bootOverlay');
+            if (!reduceMotion) {
+                window.setTimeout(() => bootOverlay?.classList.add('hidden'), 1800);
+            } else {
+                bootOverlay?.classList.add('hidden');
+            }
+
+            const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+            let konamiIndex = 0;
+            window.addEventListener('keydown', event => {
+                if (event.key === konami[konamiIndex]) {
+                    konamiIndex++;
+                    if (konamiIndex === konami.length) {
+                        printLine('ACCESS GRANTED :: hidden node unlocked', 'ok');
+                        document.body.classList.add('red-alert');
+                        setTimeout(() => document.body.classList.remove('red-alert'), 700);
+                        konamiIndex = 0;
+                    }
+                } else {
+                    konamiIndex = 0;
+                }
+            });
         })();
     </script>
 </body>
