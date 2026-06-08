@@ -30,9 +30,7 @@
         <nav class="top-nav" aria-label="Основная навигация">
             <a href="#projects">Проекты</a>
             <a href="#status">Статус</a>
-            <a href="#architecture">Архитектура</a>
-            <a href="#benchmarks">Benchmarks</a>
-            <a href="#code">Код</a>
+            <a href="#lab">Инженерия</a>
         </nav>
 
         <header class="site-header">
@@ -234,73 +232,55 @@
             </section>
 
 
-            <section class="deep-dive" id="architecture">
+            <section class="engineering-lab" id="lab" aria-label="Инженерная витрина">
                 <div class="section-head centered">
-                    <p>engineering map</p>
-                    <h2>Архитектура</h2>
+                    <p>engineering signal</p>
+                    <h2>Как устроен SeaCat</h2>
                 </div>
-                <div class="architecture-panel">
-                    <div class="node root">Client / Agent</div>
-                    <div class="flow-line"></div>
-                    <div class="node">Protocol Layer</div>
-                    <div class="flow-line"></div>
-                    <div class="node hot">Event Loop</div>
-                    <div class="flow-line"></div>
-                    <div class="arch-grid">
-                        <div class="node">epoll / select</div>
-                        <div class="node">Thread Pool</div>
-                        <div class="node">Handlers</div>
-                    </div>
-                    <p class="arch-caption">Сайт теперь показывает не только список репозиториев, но и инженерную логику: как проекты связаны между собой.</p>
-                </div>
-            </section>
 
-            <section class="benchmarks" id="benchmarks">
-                <div class="section-head">
-                    <p>performance trace</p>
-                    <h2>Benchmarks</h2>
-                </div>
-                <div class="benchmark-grid">
-                    <div class="benchmark-card">
-                        <div class="benchmark-title">seacat-http</div>
-                        <div class="bar-row"><span>requests/sec</span><i style="--w:82%"></i><b>79k</b></div>
-                        <div class="bar-row"><span>latency p95</span><i style="--w:58%"></i><b>3.8ms</b></div>
-                        <div class="bar-row"><span>memory</span><i style="--w:44%"></i><b>31mb</b></div>
+                <div class="lab-shell">
+                    <div class="lab-orbit" aria-hidden="true">
+                        <span class="orbit-ring ring-one"></span>
+                        <span class="orbit-ring ring-two"></span>
+                        <span class="orbit-core">SC</span>
                     </div>
-                    <div class="benchmark-card">
-                        <div class="benchmark-title">seacat-netcore</div>
-                        <div class="bar-row"><span>connections</span><i style="--w:76%"></i><b>12k</b></div>
-                        <div class="bar-row"><span>event loop</span><i style="--w:88%"></i><b>stable</b></div>
-                        <div class="bar-row"><span>cpu load</span><i style="--w:39%"></i><b>low</b></div>
+
+                    <div class="lab-copy">
+                        <span class="lab-badge">network core / http / agents</span>
+                        <h3>Не просто список репозиториев — единая инженерная система.</h3>
+                        <p>SeaCat собирает сетевое ядро, HTTP слой, агентов и демонов в одну экосистему: каждый проект решает свою задачу, но вместе они образуют платформу для надежного системного софта.</p>
                     </div>
                 </div>
-                <p class="note">Значения можно заменить на реальные после тестов wrk/ab/hey. Блок уже готов под настоящие цифры.</p>
-            </section>
 
-            <section class="selected-code" id="code">
-                <div class="section-head">
-                    <p>selected code</p>
-                    <h2>Фрагмент ядра</h2>
+                <div class="signal-grid">
+                    <article class="signal-card">
+                        <span>01</span>
+                        <h3>Core first</h3>
+                        <p>Сначала устойчивый event-driven фундамент, потом протоколы, сервисы и пользовательские сценарии.</p>
+                    </article>
+                    <article class="signal-card">
+                        <span>02</span>
+                        <h3>Cross-platform</h3>
+                        <p>Linux, Windows, macOS и Android не как галочки, а как часть архитектурного решения.</p>
+                    </article>
+                    <article class="signal-card">
+                        <span>03</span>
+                        <h3>Failure-ready</h3>
+                        <p>Код проектируется под шумную сеть, падения процессов, повторные подключения и долгую работу.</p>
+                    </article>
                 </div>
-                <pre><code>class EventLoop {
-public:
-    void run();
-    void stop();
-    void post(Task task);
 
-private:
-    Poller poller_;
-    ThreadPool workers_;
-    std::atomic_bool active_ { true };
-};</code></pre>
-            </section>
-
-            <section class="philosophy">
-                <div class="section-head centered">
-                    <p>engineering philosophy</p>
-                    <h2>Код, который держит удар</h2>
+                <div class="flow-showcase">
+                    <div class="flow-step"><i class="fa-solid fa-network-wired"></i><strong>netcore</strong><span>async I/O foundation</span></div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step"><i class="fa-solid fa-server"></i><strong>http</strong><span>routing + middleware</span></div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step"><i class="fa-solid fa-robot"></i><strong>agents</strong><span>services + daemons</span></div>
                 </div>
-                <p class="manifesto">Я не пишу софт ради фреймворков. Я строю системы, которые продолжают работать, когда сеть шумит, процессы падают, а хаос пытается стать нормой.</p>
+
+                <blockquote class="lab-manifesto">
+                    Я строю системы, которые остаются в строю, когда сеть шумит, процессы падают, а хаос пытается стать нормой.
+                </blockquote>
             </section>
 
             <section class="changelog">
@@ -396,14 +376,12 @@ private:
             const terminalInput = document.getElementById('terminalCommand');
             const terminalOutput = document.getElementById('terminalOutput');
             const commands = {
-                help: ['Доступные команды:', 'projects — показать модули', 'status — состояние системы', 'arch — архитектура', 'bench — benchmarks', 'code — selected code', 'sudo cat seacat.conf — секрет', 'github — открыть GitHub', 'contact — контакт', 'clear — очистить терминал'],
+                help: ['Доступные команды:', 'projects — показать модули', 'status — состояние системы', 'lab — инженерная витрина', 'sudo cat seacat.conf — секрет', 'github — открыть GitHub', 'contact — контакт', 'clear — очистить терминал'],
                 projects: ['seacat-netcore :: async network core', 'seacat-http :: HTTP/1.1 server', 'seacat-chat :: TCP/WebSocket chat', 'seacat-sharp :: IPC + serialization', 'seacat-winagent :: Windows service', 'seacat-lindaemon :: Linux daemon'],
                 status: ['[OK] core online', '[OK] network armed', '[OK] dashboard stable', '[WARN] caffeine level unknown'],
                 contact: ['contact@seacat.dev'],
                 github: ['Открываю GitHub...'],
-                arch: ['Client → Protocol Layer → Event Loop → Poller / Thread Pool / Handlers'],
-                bench: ['seacat-http :: 79k req/sec placeholder', 'seacat-netcore :: 12k connections placeholder'],
-                code: ['EventLoop::run() // poll, dispatch, survive'],
+                lab: ['SeaCat :: netcore → http → agents', 'core first / cross-platform / failure-ready'],
                 'sudo cat seacat.conf': ['ACCESS GRANTED', 'mode = chaos_control', 'coffee = required', 'owner = SeaCat.exe']
             };
             function printLine(text, cls = '') {
